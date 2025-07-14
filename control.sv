@@ -2,9 +2,9 @@
 `include "defines.svh"
 
 module control (
-    input [6:0] opcode,
-    input [2:0] funct3,
-    input [6:0] funct7,
+    input  logic [6:0] opcode,
+    input  logic [2:0] funct3,
+    input  logic [6:0] funct7,
 
     output logic br,
     output logic ret,
@@ -22,7 +22,6 @@ module control (
     output logic [1:0] regCut,
     output logic [3:0] ALUOp
 );
-
     always_comb begin
         ALUOp = 'x;
         {extIn, extOs} = '1;
@@ -110,5 +109,4 @@ module control (
             end         
         endcase
     end
-
 endmodule
